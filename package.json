@@ -1,7 +1,7 @@
 {
   "name": "form",
   "version": "1.0.0",
-  "description": "OS-IT3",
+  "description": "IT3-OS",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"
