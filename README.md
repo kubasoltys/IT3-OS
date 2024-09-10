@@ -1,2 +1,3 @@
 # IT3-OS
-projekt bude v JavaScriptu
+Projekt je v JavaScriptu.
+Postup: npm install (terminál) -> npm start (terminál) -> localhost:5000 (prohlížeč) 
