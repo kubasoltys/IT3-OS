@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <title>Výsledky</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body class="text-center">
+
+    <main>
+      <h1 class="display-4 mt-4">Výsledky</h1>
+      <table class="text-center container mt-5 table table-striped table-bordered table-hover">
+        <tr class="table-active">
+          <th scope="col">Datum</th>
+          <th scope="col">Čas</th>
+          <th scope="col">Jméno</th>
+          <th scope="col">Příjmení</th>
+          <th scope="col">Město</th>
+          <th scope="col">Ulice</th>
+          <th scope="col">Stát</th>
+          <th scope="col">Barva</th>
+        </tr>
+        <% responses.forEach(function(response) {
+            const date = new Date(response.time);
+            const dateString = `${('0' + date.getDate()).slice(-2)}.${('0' + (date.getMonth() + 1)).slice(-2)}.${date.getFullYear()}`;
+            const timeString = `${('0' + date.getHours()).slice(-2)}:${('0' + date.getMinutes()).slice(-2)}:${('0' + date.getSeconds()).slice(-2)}`;
+        %>
+        <tr scope="row">
+          <td><%= dateString %></td>
+          <td><%= timeString %></td>
+          <td><%= response.jmeno %></td>
+          <td><%= response.prijmeni %></td>
+          <td><%= response.mesto %></td>
+          <td><%= response.ulice %></td>
+          <td><%= response.stat %></td>
+          <td><%= response.barva %></td>
+        </tr>
+        <% }); %>
+      </table>
+    </main>
+
+  </body>
+</html>
